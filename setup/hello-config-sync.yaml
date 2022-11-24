@@ -1,0 +1,36 @@
+# # apiVersion: configmanagement.gke.io/v1
+# apiVersion: configsync.gke.io/v1beta1
+# kind: RootSync
+# metadata:
+#   name: config-management
+#   namespace: config-management-system
+# spec:
+#   clusterName: my-cluster
+#   git:
+#     syncRepo: https://github.com/sidgs/hello-config-sync
+#     syncBranch: master
+#     secretType: none
+#     policyDir: "policy"
+
+---
+# root-sync.yaml
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: hello-config-sync
+  namespace: config-management-system
+spec:
+  sourceType: git
+  # sourceFormat: ROOT_FORMAT
+  git:
+    repo: https://github.com/sidgs/hello-config-sync
+    # revision: ROOT_REVISION
+    branch: master
+    dir: policy
+    auth: none
+    # gcpServiceAccountEmail: ROOT_EMAIL
+    # secretRef:
+    # name: ROOT_SECRET_NAME
+    # noSSLVerify: ROOT_NO_SSL_VERIFY
+    # caCertSecretRef:
+    # name: ROOT_CA_CERT_SECRET_NAME
