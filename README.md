@@ -19,6 +19,15 @@ kubectl apply -f setup/config-management.yaml
 
 ```
 
-kubectl apply -f setup/hello-config-sync-configmanagement.yaml
+kubectl apply -f setup/samples/hello-config-sync.yaml
+
+```
+
+## Setup the bookinfo app 
+
+*Note: Ensure that ISTIO 1.15.x is installed prior to this 
+
+```
+kubectl apply -f setup/samples/bookinfo.yaml
 
 ```

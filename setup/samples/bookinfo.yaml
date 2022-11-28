@@ -3,7 +3,7 @@
 apiVersion: configsync.gke.io/v1beta1
 kind: RootSync
 metadata:
-  name: hello-config-only
+  name: bookinfo-configsync
   namespace: config-management-system
 spec:
   sourceType: git
@@ -12,7 +12,7 @@ spec:
     repo: https://github.com/sidgs/hello-config-sync
     # revision: ROOT_REVISION
     branch: master
-    dir: policy-lite
+    dir: bookinfo
     auth: none
     # gcpServiceAccountEmail: ROOT_EMAIL
     # secretRef:
